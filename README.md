@@ -27,4 +27,10 @@
 - [x] Continue the hands-on by improving the experiment design and the analysis. Share your findings on the Pad and/or on your public fork of the project.
 
 ### Week 5 07/11/2024
+- [ ] Compute confidence intervals for the data in https://github.com/alegrand/M2R-ParallelQuicksort
+
+### Week 6 14/11/2024
+- [ ]  :construction:
+
+### Week 7 21/11/2024
 - [ ]  :construction:

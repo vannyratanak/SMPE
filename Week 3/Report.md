@@ -40,8 +40,8 @@ I ran 2 experiments and get the following datas collected
 
 ### *Discussion*
 
-After run experiments there seem to be different in results. 
-The difference in results—particularly due to several factors:
+After run the analysis there seem to be different in results. 
+The difference in results particularly due to several factors:
 
 - User Differences: Variations in individual participants’ precision, speed, or familiarity with the task can lead to significant performance differences. For instance, if the we approached the task differently, it could result in different values.
 
