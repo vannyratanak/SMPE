@@ -23,7 +23,8 @@
 - [x] Continue the hands-on by improving the experiment design and the analysis.
 
 ### Week 4 24/10/2024
-- [ ]  :construction:
+- [x] Complete previous homeworks (Popper, Challenger, Checklist for Good Graphics)
+- [x] Continue the hands-on by improving the experiment design and the analysis. Share your findings on the Pad and/or on your public fork of the project.
 
 ### Week 5 07/11/2024
 - [ ]  :construction:
