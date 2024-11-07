@@ -1,0 +1,86 @@
+---
+title: "PointingXP"
+author: "Céline Coutrix"
+date: "11/17/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Loading libraries
+
+```{r loading ggplot2}
+library(ggplot2)
+```
+
+## Loading data
+
+-   MT = 1001.293 + 140.589 × log(A/W + 1) with R2 = 0.218
+
+```{r loading csv data into a dataframe}
+meanMTdf <- read.csv("../data/20211117_1527_MeanMT.csv", header=T)
+rawdf <- read.csv("../data/20211117_1527_RawData.csv", header=T)
+```
+
+## Loading data new data
+
+-   [experimental software](http://ergo.human.cornell.edu/FittsLaw/FittsLaw.html)
+-   w(1,2,4); amp(16,32,64); 6 trial
+-   MT = 328.025 + 137.603 × log(A/W + 1) with R2 = 0.604
+-   Error: 94
+
+```{r loading csv data into a dataframe}
+meanMTdf1 <- read.csv("../data/MeanMT1.csv", header=T)
+rawdf1 <- read.csv("../data/RawData1.csv", header=T)
+```
+
+## Loading data new data
+
+-   [experimental software](http://ergo.human.cornell.edu/FittsLaw/FittsLaw.html)
+-   w(1,2,4); amp(16,32,64); 6 trial
+-   MT = 501.167 + 10.220 × log(A/W + 1) with R2 = 0.003
+-   Error: 797
+
+```{r loading csv data into a dataframe}
+meanMTdf2 <- read.csv("../data/MeanMT2.csv", header=T)
+rawdf2 <- read.csv("../data/RawData2.csv", header=T)
+```
+
+## Plotting the data together with the linear regression
+
+```{r Plotting the raw data together with the linear regression}
+ggplot(meanMTdf, aes(ID, MT, color=A)) +
+  geom_point() +
+  geom_smooth(method='lm') +
+  xlim(1,6) +
+  ylim(0, 3000)
+
+ggplot(meanMTdf1, aes(ID, MT, color=A)) +
+  geom_point() +
+  geom_smooth(method='lm') +
+  xlim(1,6) +
+  ylim(0, 3000)
+
+ggplot(meanMTdf2, aes(ID, MT, color=A)) +
+  geom_point() +
+  geom_smooth(method='lm') +
+  xlim(1,6) +
+  ylim(0, 3000)
+```
+
+## Linear modelling
+
+```{r linear modeling}
+model <- lm(MT~ID, data = meanMTdf)
+summary(model)
+
+model1 <- lm(MT~ID, data = meanMTdf1)
+summary(model1)
+
+model2 <- lm(MT~ID, data = meanMTdf2)
+summary(model2)
+```
+
+Weirdly, in contrast to what Fitts' law says, ID does not seem to have an impact on the movement time. Also, the R2=0.218 reported by the [experimental software](http://ergo.human.cornell.edu/FittsLaw/FittsLaw.html) and the R2=0.008146 I find here, are different.
